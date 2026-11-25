@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { getProfile } from "@/lib/data";
 
 export function SiteFooter() {
@@ -36,9 +35,6 @@ export function SiteFooter() {
           >
             Email
           </a>
-          <Link href="/login" className="transition-colors hover:text-foreground">
-            Admin
-          </Link>
         </div>
       </div>
     </footer>
