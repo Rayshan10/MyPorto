@@ -9,6 +9,11 @@ type RevealProps = {
   delay?: number;
 };
 
+/**
+ * Animasi masuk yang tetap menampilkan konten sebelum hidrasi.
+ * Hanya posisi yang dianimasikan — opasitas tidak pernah 0, sehingga
+ * konten tidak pernah "hilang" saat JavaScript belum siap.
+ */
 export function Reveal({ children, className, delay = 0 }: RevealProps) {
   const reduceMotion = useReducedMotion();
 
@@ -19,10 +24,10 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 14 }}
+      initial={{ opacity: 1, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>

@@ -3,8 +3,8 @@ import { getProjects } from "@/lib/data";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const projects = getProjects();
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const projects = await getProjects();
 
   return [
     {

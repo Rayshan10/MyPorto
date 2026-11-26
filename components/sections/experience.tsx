@@ -4,8 +4,8 @@ import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { TechBadge } from "@/components/shared/tech-badge";
 
-export function ExperienceSection() {
-  const experiences = getExperiences();
+export async function ExperienceSection() {
+  const experiences = await getExperiences();
 
   return (
     <section id="pengalaman" className="section">
@@ -19,43 +19,50 @@ export function ExperienceSection() {
           />
         </Reveal>
 
-        <div className="mt-10 space-y-8">
+        <div className="mt-10 border-t border-foreground/25">
           {experiences.map((experience, index) => (
             <Reveal key={experience.company} delay={index * 0.05}>
-              <article className="grid gap-5 border-t border-border pt-8 md:grid-cols-[220px_1fr] md:gap-10">
-                <div className="space-y-2">
-                  <p className="font-mono text-xs text-muted-foreground">
+              <article className="group grid gap-5 border-b border-border py-8 transition-colors md:grid-cols-[56px_200px_1fr] md:gap-8">
+                <span className="font-mono text-[0.65rem] text-muted-foreground">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <div>
+                  <p className="font-mono text-[0.62rem] uppercase tracking-[0.16em] text-muted-foreground">
                     {formatRange(experience.start_date, experience.end_date)}
                   </p>
-                  <p className="inline-flex rounded-full border border-border bg-muted px-2.5 py-0.5 text-[0.7rem] text-muted-foreground">
+                  <p className="mt-2 inline-flex border border-border px-2 py-0.5 font-mono text-[0.58rem] uppercase tracking-[0.14em] text-muted-foreground">
                     {experience.employment_type}
+                  </p>
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                    {experience.location}
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold tracking-tight">
+                  <h3 className="display text-2xl sm:text-3xl">
                     {experience.role}
                   </h3>
-                  <p className="mt-0.5 text-sm text-primary">
+                  <p className="mt-1.5 text-sm font-medium">
                     {experience.company}
                   </p>
                   <p className="prose-copy mt-3 max-w-2xl">
                     {experience.description}
                   </p>
 
-                  <ul className="mt-4 space-y-2">
+                  <ul className="mt-5 grid gap-2">
                     {experience.highlights.map((highlight) => (
                       <li
                         key={highlight}
-                        className="flex items-start gap-2.5 text-sm text-muted-foreground"
+                        className="flex items-start gap-3 text-sm text-muted-foreground"
                       >
-                        <span className="mt-1.5 size-1 shrink-0 rounded-full bg-primary/70" />
+                        <span className="mt-2 h-px w-3 shrink-0 bg-foreground/40" />
                         {highlight}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="mt-4 flex flex-wrap gap-1.5">
+                  <div className="mt-5 flex flex-wrap gap-1.5">
                     {experience.tech.map((tech) => (
                       <TechBadge key={tech}>{tech}</TechBadge>
                     ))}

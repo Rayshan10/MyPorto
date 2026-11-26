@@ -40,7 +40,7 @@ export function ContactForm() {
         <Input
           id="subject"
           name="subject"
-          placeholder="Peluang kerja, kolaborasi, atau pertanyaan"
+          placeholder="Peluang kerja atau kolaborasi"
         />
       </div>
 
@@ -67,12 +67,16 @@ export function ContactForm() {
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
-        <Button type="submit" disabled={isPending} className="h-10 px-4">
-          <Send className="size-4" />
+        <Button
+          type="submit"
+          disabled={isPending}
+          className="h-10 px-4 font-mono text-[0.65rem] uppercase tracking-[0.16em]"
+        >
+          <Send className="size-3.5" />
           {isPending ? "Mengirim..." : "Kirim Pesan"}
         </Button>
         <p className="text-xs text-muted-foreground">
-          Pesan dikirim langsung ke email saya.
+          Pesan masuk ke inbox dan email saya.
         </p>
       </div>
 
@@ -81,8 +85,8 @@ export function ContactForm() {
           role="status"
           className={
             state.status === "success"
-              ? "rounded-md border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-800"
-              : "rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700"
+              ? "border border-foreground bg-foreground px-3 py-2 text-sm text-background"
+              : "border border-dashed border-foreground/60 px-3 py-2 text-sm text-foreground"
           }
         >
           {state.message}

@@ -2,7 +2,7 @@
 
 import { createHash } from "node:crypto";
 import { headers } from "next/headers";
-import { createClient } from "@supabase/supabase-js";
+import { createPublicClient } from "@/lib/supabase/public";
 import { contactSchema } from "@/lib/validations/contact";
 
 export type ContactState = {
@@ -65,20 +65,15 @@ export async function sendContactMessage(
     };
   }
 
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const supabase = createPublicClient();
 
-  if (!supabaseUrl || !serviceRoleKey) {
+  if (!supabase) {
     return {
       status: "error",
       message:
         "Formulir belum aktif. Silakan hubungi saya lewat email atau LinkedIn.",
     };
   }
-
-  const supabase = createClient(supabaseUrl, serviceRoleKey, {
-    auth: { persistSession: false },
-  });
 
   const { error } = await supabase.from("messages").insert({
     name: parsed.data.name,

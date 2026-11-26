@@ -4,8 +4,8 @@ import { formatMonthYear } from "@/lib/format";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
 
-export function CertificationsSection() {
-  const certifications = getCertifications();
+export async function CertificationsSection() {
+  const certifications = await getCertifications();
 
   return (
     <section id="sertifikasi" className="section">
@@ -18,32 +18,43 @@ export function CertificationsSection() {
           />
         </Reveal>
 
-        <div className="mt-10 divide-y divide-border border-y border-border">
+        <div className="mt-10 border-t border-foreground/25">
           {certifications.map((certification, index) => (
             <Reveal key={certification.name} delay={index * 0.03}>
-              <div className="flex flex-col gap-1 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-                <div className="flex items-baseline gap-4">
-                  <span className="w-20 shrink-0 font-mono text-xs text-muted-foreground">
+              <div className="grid grid-cols-[44px_1fr] gap-3 border-b border-border py-4 sm:grid-cols-[56px_140px_1fr_auto] sm:items-center sm:gap-6">
+                <span className="font-mono text-[0.6rem] text-muted-foreground">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <span className="hidden font-mono text-[0.62rem] uppercase tracking-[0.14em] text-muted-foreground sm:block">
+                  {formatMonthYear(certification.issued_at)}
+                </span>
+
+                <div>
+                  <p className="text-sm font-medium leading-snug">
+                    {certification.name}
+                  </p>
+                  <p className="mt-0.5 text-sm text-muted-foreground">
+                    {certification.issuer}
+                  </p>
+                  <p className="mt-1 font-mono text-[0.6rem] uppercase tracking-[0.14em] text-muted-foreground sm:hidden">
                     {formatMonthYear(certification.issued_at)}
-                  </span>
-                  <div>
-                    <p className="text-sm font-medium">{certification.name}</p>
-                    <p className="mt-0.5 text-sm text-muted-foreground">
-                      {certification.issuer}
-                    </p>
-                  </div>
+                  </p>
                 </div>
+
                 {certification.credential_url ? (
                   <a
                     href={certification.credential_url}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 text-xs text-primary hover:underline sm:shrink-0"
+                    className="link-underline inline-flex items-center gap-1 justify-self-start font-mono text-[0.6rem] uppercase tracking-[0.14em] text-muted-foreground hover:text-foreground sm:justify-self-end"
                   >
                     Verifikasi
                     <ArrowUpRight className="size-3" />
                   </a>
-                ) : null}
+                ) : (
+                  <span className="hidden sm:block" />
+                )}
               </div>
             </Reveal>
           ))}
