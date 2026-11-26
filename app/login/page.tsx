@@ -24,7 +24,7 @@ export default async function LoginPage() {
   }
 
   return (
-    <main className="grid min-h-svh place-items-center bg-muted/40 px-5 py-12">
+    <main className="grid min-h-svh place-items-center bg-background px-5 py-12">
       <div className="w-full max-w-sm">
         <Link
           href="/"
@@ -34,9 +34,9 @@ export default async function LoginPage() {
           Kembali ke portofolio
         </Link>
 
-        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+        <div className="border border-border bg-card p-6">
           <div className="mb-6">
-            <span className="grid size-9 place-items-center rounded-md bg-foreground font-mono text-xs font-semibold text-background">
+            <span className="grid size-9 place-items-center bg-brand font-mono text-xs font-semibold text-brand-foreground">
               RG
             </span>
             <h1 className="mt-4 text-xl font-semibold tracking-tight">

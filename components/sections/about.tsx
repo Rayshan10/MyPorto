@@ -38,7 +38,7 @@ export async function About() {
             ))}
           </div>
 
-          <p className="mt-8 border-l-2 border-foreground pl-4 font-display text-2xl italic leading-snug text-muted-foreground">
+          <p className="mt-8 border-l-2 border-brand pl-4 text-lg leading-snug text-muted-foreground italic">
             “Menutup pekerjaan dengan pengujian, bukan asumsi.”
           </p>
         </Reveal>

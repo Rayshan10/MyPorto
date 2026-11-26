@@ -5,7 +5,7 @@ export async function SiteFooter() {
   const profile = await getProfile();
 
   return (
-    <footer className="dark border-t border-border bg-background text-foreground">
+    <footer className="border-t border-border bg-background text-foreground">
       <div className="container-page py-10 sm:py-12">
         <div className="flex flex-col gap-8 border-b border-border pb-8 sm:flex-row sm:items-end sm:justify-between">
           <div>

@@ -23,7 +23,7 @@ export function ProjectCard({
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="group flex h-full flex-col border border-border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/60 hover:shadow-[6px_6px_0_0_var(--border)]"
+      className="group flex h-full flex-col border border-border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/60 hover:shadow-[6px_6px_0_0_var(--brand)]"
     >
       <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-muted">
         {project.thumbnail_url ? (
@@ -50,7 +50,7 @@ export function ProjectCard({
               className="absolute inset-0"
               style={{
                 backgroundImage:
-                  "linear-gradient(to right, rgba(14,14,12,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(14,14,12,0.07) 1px, transparent 1px)",
+                  "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
                 backgroundSize: "44px 44px",
               }}
             />

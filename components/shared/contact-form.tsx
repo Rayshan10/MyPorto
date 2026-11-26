@@ -85,8 +85,8 @@ export function ContactForm() {
           role="status"
           className={
             state.status === "success"
-              ? "border border-foreground bg-foreground px-3 py-2 text-sm text-background"
-              : "border border-dashed border-foreground/60 px-3 py-2 text-sm text-foreground"
+              ? "border border-brand/50 bg-brand/10 px-3 py-2 text-sm text-foreground"
+              : "border border-dashed border-border px-3 py-2 text-sm text-muted-foreground"
           }
         >
           {state.message}

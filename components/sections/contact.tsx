@@ -32,7 +32,7 @@ export async function ContactSection() {
   return (
     <section
       id="kontak"
-      className="dark relative overflow-hidden border-t border-border bg-background py-16 text-foreground sm:py-20 lg:py-24"
+      className="relative overflow-hidden border-t border-border bg-background py-16 text-foreground sm:py-20 lg:py-24"
     >
       <div className="container-page">
         <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">

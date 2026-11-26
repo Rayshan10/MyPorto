@@ -76,7 +76,7 @@ export function AdminSidebar({ email }: AdminSidebarProps) {
     <>
       <div className="flex h-14 items-center justify-between border-b border-border bg-card px-4 lg:hidden">
         <Link href="/admin" className="flex items-center gap-2">
-          <span className="grid size-7 place-items-center rounded-md bg-foreground font-mono text-[0.65rem] font-semibold text-background">
+          <span className="grid size-7 place-items-center bg-brand font-mono text-[0.65rem] font-semibold text-brand-foreground">
             RG
           </span>
           <span className="text-sm font-semibold">Admin</span>
@@ -97,7 +97,7 @@ export function AdminSidebar({ email }: AdminSidebarProps) {
 
       <aside className="fixed inset-y-0 left-0 hidden w-64 flex-col border-r border-border bg-card lg:flex">
         <div className="flex h-16 items-center gap-2 border-b border-border px-5">
-          <span className="grid size-8 place-items-center rounded-md bg-foreground font-mono text-xs font-semibold text-background">
+          <span className="grid size-8 place-items-center bg-brand font-mono text-xs font-semibold text-brand-foreground">
             RG
           </span>
           <div>

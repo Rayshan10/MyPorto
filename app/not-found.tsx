@@ -15,7 +15,7 @@ export default function NotFound() {
         </p>
         <Link
           href="/"
-          className="mt-8 inline-flex h-10 items-center bg-primary px-4 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-primary-foreground transition-colors hover:bg-foreground/80"
+          className="mt-8 inline-flex h-10 items-center bg-brand px-4 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-brand-foreground transition-opacity hover:opacity-85"
         >
           Kembali ke beranda
         </Link>
