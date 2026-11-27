@@ -2,30 +2,33 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 
 const navLinks = [
-  { href: "#tentang", label: "Tentang", index: "01" },
-  { href: "#pengalaman", label: "Pengalaman", index: "02" },
-  { href: "#proyek", label: "Proyek", index: "03" },
-  { href: "#keahlian", label: "Keahlian", index: "04" },
-  { href: "#sertifikasi", label: "Sertifikasi", index: "05" },
-  { href: "#kontak", label: "Kontak", index: "06" },
+  { href: "#hero", id: "hero", label: "Home" },
+  { href: "#tentang", id: "tentang", label: "About" },
+  { href: "#proyek", id: "proyek", label: "Projects" },
+  { href: "#pengalaman", id: "pengalaman", label: "Experience" },
+  { href: "#kontak", id: "kontak", label: "Contact" },
 ];
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("hero");
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const ids = navLinks.map((link) => link.href.slice(1));
+    const ids = navLinks.map((link) => link.id);
 
     const onScroll = () => {
-      let current = "";
+      setScrolled(window.scrollY > 24);
+
+      let current = "hero";
       for (const id of ids) {
         const element = document.getElementById(id);
-        if (element && element.getBoundingClientRect().top <= 140) {
+        if (element && element.getBoundingClientRect().top <= 160) {
           current = id;
         }
       }
@@ -38,42 +41,52 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-md">
-      <div className="container-page flex h-16 items-center justify-between gap-4">
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
+        scrolled || open
+          ? "border-b border-border bg-background/85 backdrop-blur-md"
+          : "border-b border-transparent bg-transparent",
+      )}
+    >
+      <div className="container-page flex h-20 items-center justify-between gap-6 lg:h-24">
         <Link
           href="/"
-          className="flex items-center gap-3"
+          className="flex shrink-0 items-center gap-4"
           onClick={() => setOpen(false)}
+          aria-label="Rayshan Gani Putra — beranda"
         >
-          <span className="grid size-9 place-items-center bg-brand font-mono text-[0.7rem] font-semibold tracking-wider text-brand-foreground">
+          <span className="font-display text-[2rem] font-extrabold leading-none tracking-[-0.1em] text-foreground">
             RG
           </span>
-          <span className="hidden h-6 w-px bg-border sm:block" aria-hidden />
-          <span className="hidden text-sm font-medium tracking-tight sm:block">
+          <span className="hidden h-7 w-px bg-border sm:block" aria-hidden />
+          <span className="hidden text-base font-semibold tracking-tight text-foreground sm:block">
             Rayshan Gani Putra
           </span>
         </Link>
 
         <nav
-          className="hidden items-center gap-7 md:flex"
+          className="hidden lg:absolute lg:left-1/2 lg:flex lg:-translate-x-1/2 items-center gap-9"
           aria-label="Navigasi utama"
         >
           {navLinks.map((link) => {
-            const isActive = active === link.href.slice(1);
+            const isActive = active === link.id;
             return (
               <a
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "relative py-2 text-[0.8rem] transition-colors hover:text-foreground",
-                  isActive ? "text-foreground" : "text-muted-foreground",
+                  "relative py-1 text-[0.95rem] transition-colors duration-200",
+                  isActive
+                    ? "text-foreground"
+                    : "text-foreground/60 hover:text-foreground",
                 )}
               >
                 {link.label}
                 <span
                   aria-hidden
                   className={cn(
-                    "absolute inset-x-0 -bottom-px h-0.5 origin-left bg-brand transition-transform duration-300",
+                    "absolute inset-x-0 -bottom-2 h-0.5 origin-left bg-brand transition-transform duration-300",
                     isActive ? "scale-x-100" : "scale-x-0",
                   )}
                 />
@@ -82,17 +95,11 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <a
-            href="#kontak"
-            className="hidden h-9 items-center gap-2 bg-brand px-4 text-[0.72rem] font-medium text-brand-foreground transition-opacity hover:opacity-85 sm:inline-flex"
-          >
-            Hubungi Saya
-            <ArrowUpRight className="size-3.5" />
-          </a>
+        <div className="flex shrink-0 items-center gap-2">
+          <ThemeToggle />
           <button
             type="button"
-            className="grid size-9 place-items-center border border-border text-foreground md:hidden"
+            className="grid size-10 place-items-center rounded-lg border border-border/80 text-foreground lg:hidden"
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
             aria-controls="mobile-nav"
@@ -106,7 +113,7 @@ export function SiteHeader() {
       <div
         id="mobile-nav"
         className={cn(
-          "border-t border-border bg-background md:hidden",
+          "border-t border-border bg-background lg:hidden",
           open ? "block" : "hidden",
         )}
       >
@@ -119,10 +126,14 @@ export function SiteHeader() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="flex items-center justify-between border-b border-border/60 px-1 py-3 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-muted-foreground last:border-b-0 hover:text-foreground"
+              className={cn(
+                "border-b border-border/60 px-1 py-3.5 text-sm last:border-b-0",
+                active === link.id
+                  ? "text-foreground"
+                  : "text-muted-foreground",
+              )}
             >
               {link.label}
-              <span className="text-[0.6rem]">{link.index}</span>
             </a>
           ))}
         </nav>

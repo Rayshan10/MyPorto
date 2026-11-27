@@ -50,7 +50,7 @@ export function ProjectCard({
               className="absolute inset-0"
               style={{
                 backgroundImage:
-                  "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
+                  "linear-gradient(to right, var(--grid-line) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px)",
                 backgroundSize: "44px 44px",
               }}
             />
