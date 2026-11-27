@@ -27,38 +27,24 @@ export async function Hero() {
           }}
         />
 
-        <div className="hero-media absolute inset-y-0 right-0 w-full sm:w-[88%] lg:w-[72%]">
+        <div className="hero-media absolute inset-y-0 right-0 w-full sm:w-[88%] lg:w-[66%]">
           <Image
             src="/images/rayshan.webp"
             alt="Potret hitam putih Rayshan Gani Putra"
             fill
             priority
-            sizes="(min-width: 1024px) 72vw, (min-width: 640px) 88vw, 100vw"
-            className="object-cover object-[50%_55%] grayscale contrast-[1.08] brightness-[0.9]"
+            sizes="(min-width: 1024px) 66vw, (min-width: 640px) 88vw, 100vw"
+            className="object-cover object-[50%_58%] grayscale contrast-[1.08] brightness-[0.92]"
             style={{
               maskImage:
-                "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 10%, rgba(0,0,0,0.85) 26%, #000 42%)",
+                "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 8%, rgba(0,0,0,0.85) 22%, #000 34%)",
               WebkitMaskImage:
-                "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 10%, rgba(0,0,0,0.85) 26%, #000 42%)",
-            }}
-          />
-          <Image
-            src="/images/rayshan.webp"
-            alt=""
-            aria-hidden
-            fill
-            sizes="(min-width: 1024px) 72vw, (min-width: 640px) 88vw, 100vw"
-            className="scale-x-[1.06] object-cover object-[50%_55%] opacity-80 blur-[6px] grayscale contrast-[1.08] brightness-[0.88]"
-            style={{
-              maskImage:
-                "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 10%, rgba(0,0,0,0.5) 20%, transparent 38%)",
-              WebkitMaskImage:
-                "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 10%, rgba(0,0,0,0.5) 20%, transparent 38%)",
+                "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 8%, rgba(0,0,0,0.85) 22%, #000 34%)",
             }}
           />
         </div>
 
-        <div className="absolute inset-0 bg-background/85 sm:hidden" />
+        <div className="absolute inset-0 bg-background/80 sm:hidden" />
         <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/80 to-background/10 sm:block lg:via-background/25 lg:to-transparent" />
         <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-background/85 via-background/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-background via-background/50 to-transparent" />
@@ -67,17 +53,17 @@ export async function Hero() {
       </div>
 
       <div className="relative">
-        <div className="container-page relative flex min-h-svh flex-col justify-center pt-32 pb-20 sm:pt-40 sm:pb-16 lg:pt-44 lg:pb-12">
-          <div className="max-w-[37rem]">
+        <div className="container-page relative flex min-h-svh flex-col justify-center pt-[clamp(6.5rem,20vh,13rem)] pb-[clamp(2rem,4.5vh,3rem)] lg:pt-[clamp(6.5rem,25vh,13rem)]">
+          <div className="max-w-[40rem]">
             <Reveal>
-              <p className="flex items-center gap-5 text-[1.55rem] text-foreground/80">
-                <span className="h-[2px] w-20 bg-brand" aria-hidden />
+              <p className="flex items-center gap-4 text-[clamp(1.1rem,min(1.5vw,2.7vh),1.65rem)] text-foreground/80 sm:gap-5">
+                <span className="h-[2px] w-16 bg-brand sm:w-20" aria-hidden />
                 Hello, I&apos;m
               </p>
             </Reveal>
 
             <Reveal delay={0.04}>
-              <h1 className="display mt-4 whitespace-nowrap text-[clamp(3.4rem,8.6vw,8rem)]">
+              <h1 className="display mt-[clamp(0.5rem,3vh,1.9rem)] whitespace-nowrap text-[clamp(2.9rem,min(6.9vw,12.2vh),7.6rem)] leading-[0.85] tracking-[-0.01em]">
                 Rayshan
                 <br />
                 Gani Putra
@@ -85,29 +71,29 @@ export async function Hero() {
             </Reveal>
 
             <Reveal delay={0.08}>
-              <p className="mt-6 text-[1.9rem] font-bold tracking-tight sm:text-[2.1rem]">
+              <p className="mt-[clamp(0.75rem,3.9vh,2.4rem)] text-[clamp(1.3rem,min(2vw,3.5vh),2.15rem)] font-bold tracking-tight">
                 Fullstack{" "}
                 <span className="text-muted-foreground">Developer</span>
               </p>
 
-              <p className="mt-5 max-w-[540px] text-[1.05rem] leading-[1.75] text-muted-foreground sm:text-[1.18rem]">
+              <p className="mt-[clamp(0.5rem,4.2vh,2.6rem)] max-w-[545px] text-[clamp(0.95rem,min(1.3vw,2.3vh),1.35rem)] leading-[1.5] text-muted-foreground">
                 An Informatics Engineering student who is passionate about
                 building web applications and exploring modern technologies.
               </p>
             </Reveal>
 
             <Reveal delay={0.12}>
-              <div className="mt-10 flex flex-wrap items-center gap-4">
+              <div className="mt-[clamp(1rem,4.4vh,2.75rem)] flex flex-wrap items-center gap-5 sm:gap-7">
                 <a
                   href="#proyek"
-                  className="group inline-flex h-14 items-center gap-2.5 rounded-full bg-brand px-6 text-sm font-semibold text-brand-foreground transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 lg:h-16 lg:px-8 lg:text-base"
+                  className="group inline-flex h-[clamp(3rem,6.6vh,4rem)] items-center gap-2.5 rounded-full bg-brand px-6 text-[0.95rem] font-semibold text-brand-foreground transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 lg:px-8 lg:text-[1.05rem]"
                 >
                   View My Projects
                   <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
                 <a
                   href="#tentang"
-                  className="inline-flex h-14 items-center rounded-full border border-foreground/30 px-6 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground hover:bg-foreground/5 lg:h-16 lg:px-8 lg:text-base"
+                  className="inline-flex h-[clamp(3rem,6.6vh,4rem)] items-center rounded-full border border-foreground/30 px-6 text-[0.95rem] font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground hover:bg-foreground/5 lg:px-8 lg:text-[1.05rem]"
                 >
                   About Me
                 </a>
@@ -115,7 +101,7 @@ export async function Hero() {
             </Reveal>
 
             <Reveal delay={0.16}>
-              <div className="mt-14 flex items-center gap-6">
+              <div className="mt-[clamp(1.25rem,5.6vh,3.4rem)] flex items-center gap-9">
                 <span className="h-10 w-px bg-border" aria-hidden />
                 {[
                   {
