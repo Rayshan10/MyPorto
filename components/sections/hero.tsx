@@ -27,14 +27,14 @@ export async function Hero() {
           }}
         />
 
-        <div className="hero-media absolute inset-y-0 right-0 w-full sm:w-[88%] lg:w-[66%]">
+        <div className="hero-media absolute inset-y-0 right-0 w-full sm:w-[72%] lg:w-[52%]">
           <Image
             src="/images/rayshan.webp"
             alt="Potret hitam putih Rayshan Gani Putra"
             fill
             priority
-            sizes="(min-width: 1024px) 66vw, (min-width: 640px) 88vw, 100vw"
-            className="object-cover object-[50%_58%] grayscale contrast-[1.08] brightness-[0.92]"
+            sizes="(min-width: 1024px) 52vw, (min-width: 640px) 72vw, 100vw"
+            className="object-cover object-[50%_72%] grayscale contrast-[1.08] brightness-[0.92]"
           />
         </div>
 
@@ -43,7 +43,7 @@ export async function Hero() {
           className="absolute inset-0 hidden sm:block"
           style={{
             background:
-              "linear-gradient(90deg, var(--background) 0%, var(--background) 34%, color-mix(in srgb, var(--background) 86%, transparent) 43%, color-mix(in srgb, var(--background) 55%, transparent) 52%, color-mix(in srgb, var(--background) 22%, transparent) 61%, transparent 69%)",
+              "linear-gradient(90deg, var(--background) 0%, var(--background) 50%, color-mix(in srgb, var(--background) 88%, transparent) 55%, color-mix(in srgb, var(--background) 68%, transparent) 61%, color-mix(in srgb, var(--background) 40%, transparent) 66%, color-mix(in srgb, var(--background) 12%, transparent) 70%, transparent 74%)",
           }}
         />
         <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-background/85 via-background/40 to-transparent" />
