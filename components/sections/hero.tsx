@@ -35,17 +35,17 @@ export async function Hero() {
             priority
             sizes="(min-width: 1024px) 66vw, (min-width: 640px) 88vw, 100vw"
             className="object-cover object-[50%_58%] grayscale contrast-[1.08] brightness-[0.92]"
-            style={{
-              maskImage:
-                "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 8%, rgba(0,0,0,0.85) 22%, #000 34%)",
-              WebkitMaskImage:
-                "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 8%, rgba(0,0,0,0.85) 22%, #000 34%)",
-            }}
           />
         </div>
 
         <div className="absolute inset-0 bg-background/80 sm:hidden" />
-        <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/80 to-background/10 sm:block lg:via-background/25 lg:to-transparent" />
+        <div
+          className="absolute inset-0 hidden sm:block"
+          style={{
+            background:
+              "linear-gradient(90deg, var(--background) 0%, var(--background) 34%, color-mix(in srgb, var(--background) 86%, transparent) 43%, color-mix(in srgb, var(--background) 55%, transparent) 52%, color-mix(in srgb, var(--background) 22%, transparent) 61%, transparent 69%)",
+          }}
+        />
         <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-background/85 via-background/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-background via-background/50 to-transparent" />
 
