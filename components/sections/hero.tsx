@@ -29,22 +29,22 @@ export async function Hero() {
 
         <div className="hero-media absolute inset-y-0 right-0 w-full sm:w-[72%] lg:w-[52%]">
           <Image
-            src="/images/rayshan.webp"
+            src="/images/profil.webp"
             alt="Potret hitam putih Rayshan Gani Putra"
             fill
             priority
             sizes="(min-width: 1024px) 52vw, (min-width: 640px) 72vw, 100vw"
-            className="object-cover object-[50%_72%] grayscale contrast-[1.08] brightness-[0.92]"
+            className="object-cover object-[35%_73%] grayscale contrast-[1.08] brightness-[0.92] sm:object-[50%_73%]"
             style={{
               maskImage:
-                "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.011) 5%, rgba(0,0,0,0.043) 10%, rgba(0,0,0,0.092) 15%, rgba(0,0,0,0.156) 20%, rgba(0,0,0,0.232) 25%, rgba(0,0,0,0.316) 30%, rgba(0,0,0,0.407) 35%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.593) 45%, rgba(0,0,0,0.684) 50%, rgba(0,0,0,0.768) 55%, rgba(0,0,0,0.844) 60%, rgba(0,0,0,0.907) 65%, rgba(0,0,0,0.957) 70%, rgba(0,0,0,0.988) 75%, #000 80%)",
+                "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.02) 3%, rgba(0,0,0,0.074) 6%, rgba(0,0,0,0.156) 9%, rgba(0,0,0,0.259) 12%, rgba(0,0,0,0.376) 15%, rgba(0,0,0,0.5) 18%, rgba(0,0,0,0.624) 21%, rgba(0,0,0,0.741) 24%, rgba(0,0,0,0.844) 27%, rgba(0,0,0,0.926) 30%, rgba(0,0,0,0.981) 33%, #000 36%)",
               WebkitMaskImage:
-                "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.011) 5%, rgba(0,0,0,0.043) 10%, rgba(0,0,0,0.092) 15%, rgba(0,0,0,0.156) 20%, rgba(0,0,0,0.232) 25%, rgba(0,0,0,0.316) 30%, rgba(0,0,0,0.407) 35%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.593) 45%, rgba(0,0,0,0.684) 50%, rgba(0,0,0,0.768) 55%, rgba(0,0,0,0.844) 60%, rgba(0,0,0,0.907) 65%, rgba(0,0,0,0.957) 70%, rgba(0,0,0,0.988) 75%, #000 80%)",
+                "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.02) 3%, rgba(0,0,0,0.074) 6%, rgba(0,0,0,0.156) 9%, rgba(0,0,0,0.259) 12%, rgba(0,0,0,0.376) 15%, rgba(0,0,0,0.5) 18%, rgba(0,0,0,0.624) 21%, rgba(0,0,0,0.741) 24%, rgba(0,0,0,0.844) 27%, rgba(0,0,0,0.926) 30%, rgba(0,0,0,0.981) 33%, #000 36%)",
             }}
           />
         </div>
 
-        <div className="absolute inset-0 bg-background/80 sm:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/45 sm:hidden" />
         <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-background/85 via-background/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-background via-background/50 to-transparent" />
 
