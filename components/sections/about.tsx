@@ -3,20 +3,13 @@ import { getProfile } from "@/lib/data";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
 
-const focusItems = [
-  "Backend Laravel & API yang teruji",
-  "Antarmuka React/Next.js yang rapi",
-  "Perancangan basis data relasional",
-  "Deployment & otomatisasi",
-];
-
 export async function About() {
   const profile = await getProfile();
   const paragraphs = profile.bio.split("\n\n");
   const photo = profile.photo_url || "/images/foto-formal.webp";
 
   return (
-    <section id="tentang" className="section">
+    <section id="tentang" className="section lg:py-20">
       <div className="container-page grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         {/* Narasi */}
         <Reveal className="flex flex-col">
@@ -41,29 +34,6 @@ export async function About() {
             ))}
           </div>
 
-          <div className="mt-10 max-w-xl">
-            <div className="flex items-baseline justify-between border-b border-border pb-2.5">
-              <h3 className="eyebrow">Fokus saat ini</h3>
-              <span className="font-mono text-[0.6rem] text-muted-foreground">
-                A—04
-              </span>
-            </div>
-
-            <ul className="grid sm:grid-cols-2 sm:gap-x-6">
-              {focusItems.map((item, index) => (
-                <li
-                  key={item}
-                  className="flex items-baseline gap-3 border-b border-border py-3"
-                >
-                  <span className="font-mono text-[0.6rem] text-muted-foreground">
-                    0{index + 1}
-                  </span>
-                  <span className="text-sm">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           <p className="mt-8 max-w-xl border-l-2 border-brand pl-4 text-lg leading-snug text-muted-foreground italic">
             “Menutup pekerjaan dengan pengujian, bukan asumsi.”
           </p>
@@ -80,7 +50,7 @@ export async function About() {
 
         {/* Foto formal */}
         <Reveal delay={0.1}>
-          <figure className="mx-auto w-full max-w-md lg:max-w-none">
+          <figure className="mx-auto w-full max-w-[18rem] sm:max-w-[20rem] lg:mr-0 lg:ml-auto lg:max-w-[19rem]">
             <div className="mb-3 flex items-baseline justify-between font-mono text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">
               <span className="inline-flex items-center gap-2">
                 <span className="h-px w-6 bg-brand" aria-hidden />
@@ -94,7 +64,7 @@ export async function About() {
                 src={photo}
                 alt={`Foto formal ${profile.full_name}`}
                 fill
-                sizes="(min-width: 1024px) 40vw, (min-width: 640px) 448px, 100vw"
+                sizes="(min-width: 1024px) 19rem, (min-width: 640px) 320px, 288px"
                 className="object-cover object-[50%_12%] grayscale contrast-[1.05] brightness-[0.96]"
               />
               <div
