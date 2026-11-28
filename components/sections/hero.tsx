@@ -35,19 +35,20 @@ export async function Hero() {
             priority
             sizes="(min-width: 1024px) 52vw, (min-width: 640px) 72vw, 100vw"
             className="object-cover object-[50%_72%] grayscale contrast-[1.08] brightness-[0.92]"
+            style={{
+              maskImage:
+                "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.011) 5%, rgba(0,0,0,0.043) 10%, rgba(0,0,0,0.092) 15%, rgba(0,0,0,0.156) 20%, rgba(0,0,0,0.232) 25%, rgba(0,0,0,0.316) 30%, rgba(0,0,0,0.407) 35%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.593) 45%, rgba(0,0,0,0.684) 50%, rgba(0,0,0,0.768) 55%, rgba(0,0,0,0.844) 60%, rgba(0,0,0,0.907) 65%, rgba(0,0,0,0.957) 70%, rgba(0,0,0,0.988) 75%, #000 80%)",
+              WebkitMaskImage:
+                "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.011) 5%, rgba(0,0,0,0.043) 10%, rgba(0,0,0,0.092) 15%, rgba(0,0,0,0.156) 20%, rgba(0,0,0,0.232) 25%, rgba(0,0,0,0.316) 30%, rgba(0,0,0,0.407) 35%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.593) 45%, rgba(0,0,0,0.684) 50%, rgba(0,0,0,0.768) 55%, rgba(0,0,0,0.844) 60%, rgba(0,0,0,0.907) 65%, rgba(0,0,0,0.957) 70%, rgba(0,0,0,0.988) 75%, #000 80%)",
+            }}
           />
         </div>
 
         <div className="absolute inset-0 bg-background/80 sm:hidden" />
-        <div
-          className="absolute inset-0 hidden sm:block"
-          style={{
-            background:
-              "linear-gradient(90deg, var(--background) 0%, var(--background) 50%, color-mix(in srgb, var(--background) 88%, transparent) 55%, color-mix(in srgb, var(--background) 68%, transparent) 61%, color-mix(in srgb, var(--background) 40%, transparent) 66%, color-mix(in srgb, var(--background) 12%, transparent) 70%, transparent 74%)",
-          }}
-        />
         <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-background/85 via-background/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-background via-background/50 to-transparent" />
+
+        <div className="dither absolute inset-0" />
 
         <div className="grain absolute inset-0" />
       </div>
